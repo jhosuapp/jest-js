@@ -1,14 +1,14 @@
 const GetObjUser = ()=>{
     return {
         id: 'abc123',
-        nombre: 'Jhosua',
+        userName: 'Jhosua',
     };
 }
 
 const GetObjUserActive = (name)=>{
     return {
         id: '123abc',
-        nombre: name,
+        userName: name,
     };
 }
 

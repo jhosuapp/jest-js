@@ -1,11 +1,11 @@
-import { GetObjUser, GetObjUserActive } from '../../sources/js/components/Objetos';
+import { GetObjUser, GetObjUserActive } from '../../sources/js/components/Objects';
 
 
-describe('Pruebas en archivo Objetos', ()=>{
+describe('Pruebas en archivo Objects', ()=>{
     test('Verificamos que la función GetObjUser retorne un objeto', ()=>{
         const createObj = {
             id: 'abc123',
-            nombre: 'Jhosua',
+            userName: 'Jhosua',
         };
 
         const getObj = GetObjUser();
@@ -20,12 +20,21 @@ describe('Pruebas en archivo Objetos', ()=>{
 
         const createObjActive = {
             id: '123abc',
-            nombre: nameActive,
+            userName: nameActive,
         };
 
         const getObjActive = GetObjUserActive(nameActive);
 
         expect( createObjActive ).toEqual( getObjActive );
+
+    });
+
+    test('Verificamos que al desestructurar el nombre del objeto sea "Jhosua"', ()=>{
+        const name = "Jhosua";
+
+        const { userName } = GetObjUser();
+
+        expect( name ).toBe( userName );
 
     });
 });
